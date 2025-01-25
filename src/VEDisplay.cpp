@@ -12,7 +12,7 @@ void Display::Begin(DisplayType _DisplayType){
         _height = 4;
         _width = 20;
     }
-    _lcd->begin();
+    _lcd->begin(&Wire);
     _lcd->display();
     _lcd->createChar(icon_heart, _heart);
     delay(5);
