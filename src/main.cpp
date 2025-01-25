@@ -38,7 +38,7 @@ WiFiClient _wifiClient;
 #include "mEEPROM.h"
 mEEPROM pref;
 
-#include "VEDirectFrameHandler.h"
+#include "VeDirectFrameHandler.h"
 #include "TimeLib.h"
 #include "CANBUS.h"
 
@@ -79,7 +79,7 @@ void setup()
   if (!pref.isKey("EEPROMSetup"))
   {
     log_d("EEPROM not setup, writing inital values.");
-    // pref.putBool("WifiEnabled", true);
+    pref.putBool("WifiEnabled", true);
     pref.putBool(ccCANBusEnabled, true);
     pref.putBool(ccLcdEnabled, false);
     // pref.putBool("MQTTEnabled", false);
