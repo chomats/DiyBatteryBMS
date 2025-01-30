@@ -64,26 +64,22 @@ time_t last_ow;
 String MQTT_ONEWIRE = "/Temp/OneWire";
 #endif
 
-/*
-   Wait time in Loop
-   this determines how many frames are send to MQTT
-   if wait time is e.g. 10 minutes, we will send only every 10 minutes to MQTT
-   Note: only the last incoming block will be send; all previous blocks will be discarded
-   Wait time is in seconds
-   Waittime of 1 or 0 means every received packet will be transmitted to MQTT
-   Packets during OTA or OneWire will be discarded
-*/
-int VE_WAIT_TIME = 1; // in s
-// Change from start up screen to normal after
-int VE_STARTUP_TIME = 30;
-// Update LCD Screen
-int VE_LCD_REFRESH = 1;
-
-int VE_MQTT_RECONNECT = 5;
-
-int VE_LOOP_TIME = 5;
-
 #define AppCore 1
 #define SysCore 0
+
+class ConfigClass {
+    public:
+        String wifiSSID = "Freebox-1F4155-2.4";
+        String wifiPass = "zdknwq5hwfqkv72rqv65t2";
+        String mqttServer = "192.168.1.61";
+        String wifiHostName = "smartshunt.local";
+        String mqttUser = "mosch";
+        String mqttPass = "Mmdp-3325";
+        uint16_t mqttPort = 1883;
+        String mqttClientID = "diy-smartshunt-bms";
+        String mqttTopic = "diy-smartshunt-bms";
+        String mqttParameter = "/Param";
+        String ntpServer = "192.168.1.254";
+};
 
 #endif
